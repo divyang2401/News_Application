@@ -1,0 +1,78 @@
+
+
+  <div class="row">
+    <div class="col-md-4">
+      <form #loginForm="ngForm" (ngSubmit)="loginForm.valid && handleSubmit()">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" [(ngModel)]="model.username" name="username" id="username" class="form-control" required
+            #username="ngModel" [ngClass]="{ 'is-invalid': username.touched && username.invalid }">
+          <span class="invalid-feedback">Username can't be blank.</span>
+        </div>
+  
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" #password="ngModel" [(ngModel)]="model.password" name="password" id="password"
+            class="form-control" required [ngClass]="{ 'is-invalid': password.touched && password.invalid }">
+          <span class="invalid-feedback">Password can't be blank.</span>
+        </div>
+  
+        <button class="btn btn-primary mr-5">Login</button>
+        <button class="btn btn-dark" type='reset' value='Reset'>Reset</button>
+        
+      </form>
+    </div>
+    <div class="col-md-4">
+      <form #registerForm="ngForm" (ngSubmit)="registerForm.valid && handleRegisterSubmit()">
+  
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" [(ngModel)]="model.name" name="name" id="name" class="form-control" required
+            #name="ngModel" [ngClass]="{ 'is-invalid': name.touched && name.invalid }">
+          <span class="invalid-feedback">Name can't be blank.</span>
+        </div> 
+  
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" [(ngModel)]="model.username" name="username" id="username" class="form-control" required
+            #username="ngModel" [ngClass]="{ 'is-invalid': username.touched && username.invalid }">
+          <span class="invalid-feedback">Username can't be blank.</span>
+        </div>
+  
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="text" [(ngModel)]="model.email" name="email" id="email" class="form-control" required
+            #email="ngModel" [ngClass]="{ 'is-invalid': email.touched && email.invalid }">
+          <span class="invalid-feedback">Email can't be blank.</span>
+        </div>
+  
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" #password="ngModel" [(ngModel)]="model.password" name="password" id="password"
+            class="form-control" required [ngClass]="{ 'is-invalid': password.touched && password.invalid }">
+          <span class="invalid-feedback">Password can't be blank.</span>
+        </div>
+  
+        <button class="btn btn-secondary mr-5">Register</button>
+        <button class="btn btn-dark " type='reset' value='Reset'>Reset</button>
+        
+      </form>
+    </div>
+
+
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    
+      
+    
+    
+ 
+  

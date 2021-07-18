@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<a class="navbar-brand" href="#">Update 24X7 Admin</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+		  <span class="navbar-toggler-icon"></span>
+		</button>
+	  </nav>
+      <br>
+      <center>
+	<div class="row container h-100">
+		<div class="col h-100 justify-content-center align-items-center">
+				<h3>Edit News</h3><br>
+				<form action="/api/admin/update/<%= data._id %>" method="POST">
+					<input type="text" name="title" placeholder="<%= data.title %>" value="<%= data.title %>" style="width:700px"><br><br>
+					<input type="text" name="description" placeholder="<%= data.description %>" value="<%= data.description %>" style="width:700px"><br><br>
+                    <input type="text" name="url" placeholder="<%= data.url %>" value="<%= data.url %>" style="width:700px"><br><br>
+                    <input type="text" name="imageUrl" placeholder="<%= data.imageUrl %>" value="<%= data.imageUrl %>" style="width:700px"><br><br>
+					<div>
+						<button type="submit" class="btn btn-success">
+							Update
+						</button>
+				</div>
+				</form>
+			</div>
+    </div>
+</center>
+</body>
+</html>

@@ -1,0 +1,11 @@
+
+  
+  <nav *ngIf="admin.getUserDetails()">
+    
+    
+    <a class="btn btn-secondary btn-sm float-left ml-2" routerLink="/addNews">Add News</a>
+    <a class="btn btn-secondary btn-sm float-left ml-2" routerLink="/updateNews">Update News</a>
+    <button class="btn btn-danger btn-sm float-left ml-2" (click)="handleLogout()">
+      Logout
+    </button>
+  </nav>

@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Angular</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCev4YrI06YHN0P4RY6876Nhm8V_yICbCg"></script>
+  <!-- CSS only -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+
+<hr/>
+<div class="wrapper" style="width: 40% !important;">
+    <div class="col-md-2 mt-2 d-md-block d-none" width="40%">
+        <div class="row">
+            <form [formGroup]="homeForm" (ngSubmit)="onSubmit(homeForm.value)">
+ 
+                <div class="col-md-8"><h3 class="text-center">Weather Report</h3></div><br/>  
+                <div class="form-group">             
+                    <input class="form-control" id="city" formControlName="city" name="city" type="text" placeholder="Enter a City"/><br/> 
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-success btn-md">Submit</button>
+                </div>
+                <div class="row">
+                    <!-- %for(let i=0; i<result.list.length;i++){% -->
+                        <div class="card col-md-2">
+                            <div class="row">
+                                <img class="card-img-top" src='https://openweathermap.org/img/w/{{result.list[0].weather[0].icon}}.png' alt="weather"/>
+
+                                <span class="topTemp">{{result.list[0].temp.day}}°C</span>
+                            </div>
+                            <div class="card-body">
+                                <span class="max">{{result.list[0].temp_max}}</span>   
+                                <span class="min">{{result.list[0].temp.min}}°C</span>
+                                <h4 class="card-title">{{result.list[0].weather[0].main}}</h4>
+                                <div class="card-text">
+                                    <h5 class="day">Date: {{result.list[0].dt | date}} </h5>    
+                                    <h5>Humidity:  {{result.list[0].humidiy}}</h5>   
+                                </div>
+                                {{result}}
+                            </div>
+                        </div>
+                    <!-- %}% -->
+                </div>    
+                            
+    
+        </form>
+    </div>
+</div>
+<hr/>
+        <div class="wrapper">
+            <div class="col-md-2 mt-2 d-md-block d-none" width="50%">
+                <h2> Image Slider </h2>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+                <h2> </h2>
+                <div class="slider" width="500%;" height="500px;" display="flex">
+                    <div class="slides" width="20%;" transition="2s;">
+                        <input type="radio" name="radio-btn" id="radio1">
+                        <input type="radio" name="radio-btn" id="radio2">
+                        <input type="radio" name="radio-btn" id="radio3">
+                        <input type="radio" name="radio-btn" id="radio4">
+                        <div class="slide first">
+                            <img src="C:\Users\1871021\Desktop\aa.png" alt="">
+                        </div>
+                        <div class="slide">
+                            <img src="C:\Users\1871021\Desktop\aa11.png" alt="">
+                        </div>
+                        <div class="slide">
+                            <img src="C:\Users\1871021\Desktop\100.png" alt="">
+                        </div>
+                        <div class="slide">
+                            <img src="C:\Users\1871021\Desktop\m1.png" alt="">
+                        </div>
+                        <div class="navigation-auto">
+                            <div class="auto-btn1"></div>
+                            <div class="auto-btn2"></div>
+                            <div class="auto-btn3"></div>
+                            <div class="auto-btn4"></div>
+                        </div>
+                        <div class="navigation-manual">
+                            <label for="radio1" class="manual-btn"></label>
+                            <label for="radio2" class="manual-btn"></label>
+                            <label for="radio3" class="manual-btn"></label>
+                            <label for="radio4" class="manual-btn"></label>
+
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div><hr/>
+        <div class="wraper">
+            <div class="col-md-2 mt-2 d-md-block d-none" width="20%">
+                <h6> 3 Latest News </h6>
+            </div>
+        </div><hr/>
+        <div class="wraper">
+            <div class="col-md-2 mt-2 d-md-block d-none" width="10%;">
+                <a type="submit" class="btn btn-success btn-md" href="http://localhost:4000/chat">Chat Box</a>
+            </div>
+        </div><hr/>

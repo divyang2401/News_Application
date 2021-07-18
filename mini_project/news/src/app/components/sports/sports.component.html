@@ -1,0 +1,54 @@
+  
+<div class="container">
+  
+  <div class="row">  
+    
+    <div class = 'col-sm'>
+      <br>
+    <br>
+    <br>
+    <ngb-carousel>
+      <ng-template ngbSlide *ngFor="let item of displaySport">
+        <div class="picsum-img-wrapper">
+          <img src="{{ item.imageUrl }}" alt="Angular Carousel 1" width="100%">
+        </div>
+        <div class="carousel-caption">
+          <h3>{{ item.title }}</h3>
+        </div>
+      </ng-template> 
+     </ngb-carousel>
+    </div>
+
+
+
+
+    <div class = 'col-sm'  >
+      <br>
+      <br>
+      <h1>All News</h1>
+      
+<div class="ex1">
+      
+      <div class="row-sm" *ngFor="let image of displaySport" >
+        <div id="image" style="display:inline;">
+            <img src="{{ image.imageUrl }}" width="20%">
+          </div>
+          <div id="texts" style="display:inline; " > 
+            <a href="{{image.url}}" style="color:rgb(27, 24, 24)">{{image.title}}</a> 
+          </div>
+      </div>
+    </div>
+  </div>  
+
+
+
+
+
+  
+</div> 
+</div>
+    
+  
+
+
+  

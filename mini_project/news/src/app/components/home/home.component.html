@@ -1,0 +1,41 @@
+<hr/>
+
+<div class="container">
+    <div class="row">
+        <form class="form-group" [formGroup]="weatherForm" (ngSubmit)="handleSubmit(city)">
+            <div class="form-group">
+                <input class="form-control" type="text" id="city" formControlName="city" placeholder="Enter your city"/>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-success btn-md">Submit</button>
+            </div>
+
+            <div *ngIf="city!=null" class="row">
+                <div class="card" style="width: 500px;">
+                    <div class="row no-gutters">
+                        <div class="col-sm-5">
+                            <img class="card-img" src='https://openweathermap.org/img/w/{{weather.list[0].weather[0].icon}}.png'>
+                        </div>
+                        <div class="col-sm-7">
+                                <div class="card-body">
+                                    <h4 class="card-title">{{weather.city.name}}</h4>
+                                    <span class="max">{{weather.list[0].main.temp_max}} - </span>   
+                                    <span class="min">{{weather.list[0].main.temp_min}}°C</span>
+                                    <h4 class="card-title">{{weather.list[0].weather[0].main}}</h4>
+                                    <div class="card-text">
+                                        <p class="day"><b>Date:</b> {{weather.list[0].dt | date}} </p>    
+                                        <p><b>Humidity:</b> {{weather.list[0].main.humidity}} </p>   
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<hr/>
+
+        <app-slider></app-slider>
+
+

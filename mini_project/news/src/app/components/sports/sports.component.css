@@ -1,0 +1,11 @@
+body{
+    background-color:rgb(206, 206, 206);
+}
+
+div.ex1 {
+    background-color: rgba(243, 237, 237, 0.993);
+    width: 100%;
+    height: 70%;
+    overflow-x: scroll;
+    overflow-y: scroll;
+  }

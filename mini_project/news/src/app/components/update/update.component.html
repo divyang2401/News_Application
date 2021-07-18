@@ -1,0 +1,40 @@
+
+  
+  <table class="table">
+      <thead class="thead-dark">
+  
+    <tr >
+      <th>Title</th>
+      <th>Description</th>
+     
+    
+  </tr>
+  </thead>
+  
+  <tbody   *ngFor="let det of news"  >
+    <tr *ngIf="det._id !== ids"></tr>
+    <td>{{det.title}}</td>
+    <td>{{det.description}}</td>
+    
+    <td>
+      <button class="btn btn-warning" (click)="editNews(det._id)">Edit</button>
+    </td>
+    <td>
+      <button class="btn btn-danger" (click)="removeNews(det)">Delete</button>
+    </td>
+    
+  <tr *ngIf="det._id === ids">
+    <td><input type="text" size="20" [(ngModel)]=det.title></td>
+    <td>
+        <textarea rows="4" cols="60" [(ngModel)]=det.description>
+        </textarea>
+    </td>
+   
+    <td>
+        <button class="btn btn-dark" (click)="updateNews(det)">Update</button>
+    </td>
+</tr>
+
+  </tbody>
+  </table>
+ 

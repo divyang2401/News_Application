@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<a class="navbar-brand" href="#">Update 24X7 Admin</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+		  <span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+		  <ul class="navbar-nav">
+			<li class="nav-item active">
+			  <a class="nav-link" href="./newsForm">NewsForm <span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" action="./editNews" method="GET">EditNews <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="./">Logout <span class="sr-only"></span></a>
+            </li>
+		  </ul>
+		</div>
+	  </nav>
+      <br>
+      <center>
+	<div class="row container h-100">
+		<div class="col h-100 justify-content-center align-items-center">
+				<h3>News List</h3><br>
+				<div>
+                    <table id="myTable">
+                    <thead>
+                      <tr>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Published At</th>
+                        <th>Edit/Delete</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <% for(var i=0; i<data.length; i++) {%>
+                  <tr>
+                    <td><%= data[i].title %></td>
+                    <td><%= data[i].description %></td>
+                    <td><%= data[i].publishedAt %></td>
+                    <td>
+                      <a class="btn btn-raises btn-warning" href="./edit/<%= data._id %>">
+                        Edit
+                      </a>
+                      <a class="btn btn-raised btn-danger" href="./delete/<%= data._id %>">
+                        Delete
+                      </a>
+                    </td>
+                  </tr>
+                <% } %>
+                  </tbody>
+                  </table>
+            </div>
+			</div>
+    </div>
+</center>
+</body>
+</html>

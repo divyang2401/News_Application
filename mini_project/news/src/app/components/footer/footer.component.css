@@ -1,0 +1,14 @@
+.footer {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    width: 100%;
+    background-color: blue;
+    color: white;
+    text-align: center;
+   
+}
+.wrapper{
+    margin: 40px;
+    bottom: 20px;
+}

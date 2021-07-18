@@ -1,0 +1,41 @@
+<div class="row">
+    <div class="col-md-4">
+        <form [formGroup]="newsForm" (ngSubmit)="newsForm.valid && handleSubmit()">
+            
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" id="title" class="form-control" formControlName="title"
+                    [ngClass]="{'is-invalid': newsForm.get('title').touched && newsForm.get('title').invalid }">
+                <span class="invalid-feedback">Title can't be blank</span>
+            </div>
+
+            <div class="form-group">
+                <label for="description">Description</label>
+                <input type="text" id="description" class="form-control" formControlName="description"
+                    [ngClass]="{'is-invalid': newsForm.get('description').touched && newsForm.get('description').invalid }">
+                <span class="invalid-feedback">Description can't be blank</span>
+            </div>
+
+            
+
+            <div class="form-group">
+                <label for="url">Url</label>
+                <input type="text" id="url" class="form-control" formControlName="url"
+                    [ngClass]="{'is-invalid': newsForm.get('url').touched && newsForm.get('url').invalid }">
+                <span class="invalid-feedback">Article Url can't be blank</span>
+            </div>
+
+            <div class="form-group">
+                <label for="imageUrl">Image Url</label>
+                <input type="text" id="imageUrl" class="form-control" formControlName="imageUrl"
+                    [ngClass]="{'is-invalid': newsForm.get('imageUrl').touched && newsForm.get('imageUrl').invalid }">
+                <span class="invalid-feedback">Url Image can't be blank</span>
+            </div>
+
+           
+
+            <button [disabled]="newsForm.invalid" class="btn btn-primary mr-5">Add</button>
+            <button class="btn btn-dark" type='reset' value='Reset'>Reset</button>
+        </form>
+    </div>
+</div>

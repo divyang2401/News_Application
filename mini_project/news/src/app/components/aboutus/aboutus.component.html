@@ -1,0 +1,37 @@
+
+<table>
+<tr>
+  <td> <google-map>
+  
+    <map-marker
+    [position]="position"
+    [label]="label"
+    [title]="title"
+  ></map-marker>
+  </google-map></td>
+
+<td>
+  <p class="infoc">
+    
+    <div>
+        Values:<p>{{values}}</p>
+     </div>
+
+     <div>
+      History:<p>{{history}}</p>
+     </div>
+
+   <div>
+    <button class="btn btn-primary" type="button" id="btnmoreinfo" (click)="toggle()">Learn More</button>
+   </div>  
+
+   <ng-container *ngIf="show">
+    <div id='moreinfo'>
+      Learnmore:<p>{{learnmore}}</p>
+    </div>
+  </ng-container>
+
+  
+</td>
+</tr>
+</table>
